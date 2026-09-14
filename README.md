@@ -60,7 +60,7 @@ Alongside the three bookable offers, the site has a fourth, price-less **"Custom
 Instead of relying on a Google Form embed, submissions are handled natively and fanned out to two Google channels via connectors:
 
 1. The request is validated (Zod) and stored in the database.
-2. A notification **email lands in my Gmail** (`rhaissavitor@gmail.com`), with the requester's address as Reply-To so I can answer in one click.
+2. A notification **email lands in my Gmail**, with the requester's address as Reply-To so I can answer in one click.
 3. The same request is **appended as a row in a Google Sheet** — giving me the structured, exportable list of answers a Google Form would have produced, without sending visitors to an external form.
 
 The visitor always sees the confirmation once the request is saved; notification issues are logged on my side instead of being shown to them, so a saved lead never looks lost.
