@@ -8,7 +8,7 @@ A conversion-focused landing page for my 1:1 mentoring, product & growth strateg
 
 ## Why this repo exists
 
-I'm a Staff Product Manager with 10+ years shipping digital products, and I'm increasingly working as an **AI builder** — using AI tooling to go from idea to shipped product fast, with product judgment guiding every decision.
+I'm a Product Leader with 10+ years shipping digital products, and I'm increasingly working as an **AI builder** — using AI tooling to go from idea to shipped product fast, with product judgment guiding every decision.
 
 This site is a small, honest example of that. The interesting part isn't the code — it's the *decisions*. This README documents how I thought about the problem, so you can see the reasoning, not just the result.
 
