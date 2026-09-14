@@ -91,39 +91,6 @@ src/
 - **Stripe** — payment checkout (USD / BRL)
 - **Lovable email domain** — confirmation emails
 
-## Running locally
-
-The repo uses `bun`:
-
-```bash
-bun install
-bun run dev
-```
-
-The dev server starts at `http://localhost:8080`.
-
-## Deploy
-
-Frontend deploys via **Lovable Publish** — click the Publish button in the editor and then Update in the publish dialog to push changes live.
-
-- **Preview URL:** `https://id-preview--03a3d69a-f891-4b0d-98f0-ad4cfacde6ad.lovable.app`
-- **Production URL:** `https://rhaissa.lovable.app`
-- **Custom domains:** `rhaissa.co` and `www.rhaissa.co`
-
-Backend changes (server functions, database, webhooks) deploy automatically when saved. Frontend changes need an explicit publish update to reach production.
-
-## Environment variables
-
-Secrets are managed inside Lovable and never committed. The app expects variables like these (names only, no values):
-
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_PUBLISHABLE_KEY`
-- Stripe keys (public and secret)
-- Google OAuth / Calendar API credentials
-- Email domain configuration
-
-If you clone this repo, you'll need to wire up your own Lovable project or Supabase backend and reconnect the integrations.
-
 ## What I'd do next
 
 - Add **Pix** as a payment method alongside Stripe, to make booking effortless for the Brazilian audience.
