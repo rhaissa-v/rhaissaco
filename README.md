@@ -2,7 +2,7 @@
 
 A conversion-focused landing page for my 1:1 mentoring, product & growth strategy, and advisory work.
 
-**Live:** [rhaissa.co](https://rhaissa.co) · **Repo:** [github.com/rhaissav-source/rhaissaco](https://github.com/rhaissav-source/rhaissaco) · **Built with:** [Lovable](https://lovable.dev) · **Refined by hand:** copy, information architecture, and product decisions.
+**Live:** [rhaissa.co](https://rhaissa.co) · **Repo:** [github.com/rhaissa-v/rhaissaco](https://github.com/rhaissa-v/rhaissaco) · **Built with:** [Lovable](https://lovable.dev) · **Refined by hand:** copy, information architecture, and product decisions.
 
 ---
 
