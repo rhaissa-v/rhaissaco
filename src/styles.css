@@ -1,0 +1,895 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Rhaissa "Ray" Vitor personal site.
+ * Minimalist, data-driven, multicultural: deep ink base, indigo→teal accent
+ * spectrum inspired by LinkedIn blue with green/violet counterpoints.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-violet: var(--violet);
+  --color-teal: var(--teal);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-indigo: var(--indigo);
+  --color-primary-glow: var(--primary-glow);
+  --color-logo-surface: var(--logo-surface);
+  --color-logo-surface-strong: var(--logo-surface-strong);
+  --color-work-section: var(--work-section);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-display: "Libre Baskerville", ui-serif, Georgia, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --background: oklch(0.98 0.004 286);
+  --foreground: oklch(0.19 0.025 290);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.035 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.035 285);
+
+  --primary: oklch(0.53 0.14 285);
+  --primary-foreground: oklch(0.99 0.004 240);
+  --secondary: oklch(0.92 0.02 295);
+  --secondary-foreground: oklch(0.28 0.05 288);
+  --muted: oklch(0.92 0.02 295);
+  --muted-foreground: oklch(0.5 0.028 288);
+  --accent: oklch(0.94 0.035 292);
+  --accent-foreground: oklch(0.3 0.09 288);
+
+  --violet: oklch(0.52 0.16 292);
+  --teal: oklch(0.62 0.11 178);
+  --indigo: oklch(0.42 0.13 265);
+  --ink: oklch(0.19 0.025 290);
+  --ink-foreground: oklch(0.985 0.005 285);
+  --logo-surface: oklch(0.965 0.009 285);
+  --logo-surface-strong: oklch(0.925 0.014 285);
+  --work-section: oklch(0.945 0.018 290);
+  --primary-glow: oklch(0.62 0.16 296);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.9 0.014 285);
+  --input: oklch(0.9 0.014 285);
+  --ring: oklch(0.5 0.15 285);
+
+  --gradient-spectrum: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--violet) 50%,
+    var(--teal) 100%
+  );
+  --gradient-ink: linear-gradient(160deg, oklch(0.18 0.035 285) 0%, oklch(0.27 0.06 292) 100%);
+  --shadow-soft: 0 1px 2px oklch(0.19 0.035 285 / 6%), 0 12px 32px -18px oklch(0.19 0.035 285 / 22%);
+  --shadow-lift: 0 2px 4px oklch(0.19 0.035 285 / 8%), 0 24px 48px -24px oklch(0.5 0.15 285 / 30%);
+
+  --chart-1: oklch(0.5 0.15 285);
+  --chart-2: oklch(0.52 0.16 292);
+  --chart-3: oklch(0.62 0.11 178);
+  --chart-4: oklch(0.42 0.13 265);
+  --chart-5: oklch(0.72 0.12 200);
+  --sidebar: oklch(0.985 0.005 285);
+  --sidebar-foreground: oklch(0.19 0.035 285);
+  --sidebar-primary: oklch(0.5 0.15 285);
+  --sidebar-primary-foreground: oklch(0.99 0.004 285);
+  --sidebar-accent: oklch(0.955 0.012 285);
+  --sidebar-accent-foreground: oklch(0.28 0.05 288);
+  --sidebar-border: oklch(0.9 0.014 285);
+  --sidebar-ring: oklch(0.5 0.15 285);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: oklch(0.5 0.15 285 / 18%);
+  }
+}
+
+@utility text-spectrum {
+  background: var(--gradient-spectrum);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility rule-spectrum {
+  background: var(--gradient-spectrum);
+}
+
+@utility surface-ink {
+  background: var(--gradient-ink);
+  color: var(--ink-foreground);
+}
+
+@utility card-soft {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  transition:
+    box-shadow 240ms ease,
+    transform 240ms ease,
+    border-color 240ms ease;
+
+  &:hover {
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+  }
+}
+
+@layer components {
+  .editorial-hero {
+    position: relative;
+    min-height: calc(100svh - 4rem);
+    overflow: clip;
+  }
+
+  .editorial-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--border) 55%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--border) 45%, transparent) 1px, transparent 1px);
+    background-size: 25% 100%, 100% 25%;
+    mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+    pointer-events: none;
+  }
+
+  .editorial-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: calc(100svh - 4rem);
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding: 2rem 1.25rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .editorial-hero-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .editorial-hero-stage {
+    position: relative;
+    display: grid;
+    flex: 0 0 auto;
+    align-items: center;
+    align-content: center;
+    justify-items: start;
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .editorial-hero-copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  .editorial-hero-copy h1 {
+    max-width: 14ch;
+    font-size: clamp(3.65rem, 15vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: 0;
+    text-wrap: balance;
+    overflow-wrap: normal;
+  }
+
+  .editorial-hero-copy h1 span,
+  .editorial-hero-copy h1 em {
+    display: block;
+  }
+
+  .editorial-hero-copy h1 em {
+    margin-top: 0.16em;
+    color: transparent;
+    font-weight: 400;
+    -webkit-text-stroke: 1.5px var(--primary);
+    text-stroke: 1.5px var(--primary);
+  }
+
+  html[lang="pt-BR"] .editorial-hero-copy h1 {
+    font-size: clamp(3.2rem, 13vw, 5.1rem);
+  }
+
+  .editorial-hero-signature {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-align: left;
+  }
+
+  .editorial-hero-signature > p:last-child {
+    display: grid;
+    gap: 0.15rem;
+    text-align: left;
+  }
+
+  .editorial-hero-signature strong {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+  }
+
+  .editorial-hero-signature span {
+    color: var(--muted-foreground);
+    font-size: 0.7rem;
+  }
+
+  .editorial-hero-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .editorial-hero-intro-copy {
+    max-width: 62rem;
+  }
+
+  .editorial-hero-intro-copy > .eyebrow {
+    margin-bottom: 1.25rem;
+    font-size: 0.625rem;
+  }
+
+  .editorial-hero-intro-lead {
+    max-width: none;
+    font-family: var(--font-display);
+    font-size: clamp(1.95rem, 7.7vw, 5.25rem);
+    font-weight: 400;
+    line-height: 1.1;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+
+  .editorial-hero-intro-body {
+    max-width: 58ch;
+    margin-top: 1rem;
+    color: var(--muted-foreground);
+    font-size: clamp(0.94rem, 1.3vw, 1.08rem);
+    line-height: 1.65;
+  }
+
+  .editorial-action {
+    display: inline-flex;
+    min-height: 2.75rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-inline: 1.2rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  }
+
+  .editorial-action:hover {
+    transform: translateY(-2px);
+  }
+
+  .editorial-action-outline {
+    border: 1px solid var(--foreground);
+    color: var(--foreground);
+  }
+
+  .editorial-action-outline:hover {
+    background: var(--foreground);
+    color: var(--background);
+  }
+
+  .editorial-action-solid {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .editorial-metrics {
+    padding-block: 7rem 5rem;
+    background: var(--ink);
+    color: var(--ink-foreground);
+  }
+
+
+  .editorial-metric-label {
+    color: color-mix(in oklab, var(--ink-foreground) 96%, var(--ink));
+  }
+
+  .editorial-metric {
+    display: flex;
+    min-height: 10rem;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.25rem;
+    border-top: 1px solid color-mix(in oklab, var(--ink-foreground) 30%, transparent);
+    border-left: 1px solid color-mix(in oklab, var(--ink-foreground) 30%, transparent);
+  }
+
+  .editorial-metric:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .recognition-chapter {
+    padding-block: 2rem;
+    background: var(--background);
+  }
+
+  .recognition-editorial {
+    color: inherit;
+  }
+
+  .work-chapter {
+    padding-block: 6rem;
+    background: var(--work-section);
+  }
+
+  .editorial-section-title {
+    max-width: 12ch;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 640px) {
+    .editorial-hero-inner {
+      padding: 2rem;
+      gap: 1.25rem;
+    }
+
+    .editorial-hero-footer {
+      align-items: flex-start;
+    }
+
+    .editorial-metric:nth-child(odd) {
+      border-left: 1px solid color-mix(in oklab, var(--ink-foreground) 30%, transparent);
+    }
+
+    .editorial-metric:first-child {
+      border-left: 0;
+    }
+
+    .editorial-section-title {
+      font-size: 5.1rem;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 1199px) {
+    .editorial-hero-copy h1 {
+      font-size: clamp(4rem, 7.4vw, 6.2rem);
+      line-height: 1.06;
+    }
+
+    html[lang="pt-BR"] .editorial-hero-copy h1 {
+      font-size: clamp(3.8rem, 6.8vw, 5.75rem);
+    }
+  }
+
+  @media (min-width: 640px) {
+    .editorial-hero-inner {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .editorial-hero-inner {
+      padding: 2rem 2rem 2.5rem;
+    }
+
+    .editorial-hero-footer {
+      gap: 2rem;
+    }
+
+    .editorial-metric {
+      min-height: 13rem;
+      padding: 1.75rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .editorial-hero-copy h1 {
+      max-width: 13ch;
+      font-size: clamp(7rem, min(7vw, 14svh), 9rem);
+    }
+
+    html[lang="pt-BR"] .editorial-hero-copy h1 {
+      font-size: clamp(6.4rem, min(6.4vw, 13svh), 8.25rem);
+    }
+  }
+
+  /* Short laptop viewports: shrink hero so CTAs stay above the fold */
+  @media (min-width: 1024px) and (max-height: 860px) {
+    .editorial-hero-inner {
+      padding-block: 1.5rem;
+      gap: 1rem;
+    }
+
+    .editorial-hero-copy h1 {
+      font-size: clamp(5.5rem, min(8.5vw, 14svh), 7.3rem);
+    }
+  }
+
+
+  @supports (animation-timeline: view()) {
+    .scroll-chapter > * {
+      animation: editorial-enter both linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+
+    .scroll-chapter > *:nth-child(2) {
+      animation-range: entry 5% cover 40%;
+    }
+
+    .scroll-chapter > *:nth-child(3) {
+      animation-range: entry 10% cover 45%;
+    }
+  }
+
+  @keyframes editorial-enter {
+    from {
+      opacity: 0;
+      transform: translateY(2.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .work-editorial {
+    display: grid;
+    min-width: 0;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+    border-block: 1px solid var(--border);
+    padding-block: 2.5rem;
+  }
+
+  .work-editorial-brand {
+    display: flex;
+    min-height: 8rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .work-editorial-copy h3 {
+    max-width: 18ch;
+    margin-top: 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .work-editorial-copy {
+    min-width: 0;
+  }
+
+  .work-editorial-result {
+    margin-top: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .work-editorial-body {
+    max-width: 62ch;
+    margin-top: 1rem;
+    color: var(--muted-foreground);
+    line-height: 1.7;
+  }
+
+  .work-card-tag {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  @media (min-width: 768px) {
+    .work-editorial {
+      grid-template-columns: minmax(12rem, 0.7fr) minmax(0, 1.3fr);
+      gap: 5rem;
+      padding-block: 4rem;
+    }
+  }
+
+  .work-card-logo {
+    width: min(58%, 11rem);
+    max-height: 4.5rem;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0);
+    transition: filter 160ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .work-card[data-brand="quqo"] .work-card-logo {
+    width: min(48%, 9rem);
+  }
+
+  .work-card[data-brand="next"] .work-card-logo {
+    width: min(48%, 9rem);
+  }
+
+  .editorial-offer-row {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-block: 2.25rem;
+  }
+
+  .editorial-offer-copy h2,
+  .editorial-offer-copy h3 {
+    margin-top: 0.75rem;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 4.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .editorial-offer-copy > p:not(.eyebrow) {
+    max-width: 52ch;
+    margin-top: 0.85rem;
+    color: var(--muted-foreground);
+    line-height: 1.65;
+  }
+
+  .editorial-offer-action {
+    min-width: min(100%, 13rem);
+  }
+
+  @media (min-width: 768px) {
+    .editorial-offer-row {
+      grid-template-columns: minmax(0, 1.45fr) minmax(13rem, 0.55fr);
+      gap: 4rem;
+      padding-block: 3rem;
+    }
+
+    .editorial-offer-action {
+      text-align: right;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-chapter > * { animation: none; }
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+/* Unlayered so it beats the eyebrow utility's color on the dark metrics chapter. */
+.editorial-metrics .eyebrow {
+  color: color-mix(in oklab, var(--ink-foreground) 92%, var(--ink));
+}
+
+@utility bg-primary-soft {
+  background: oklch(0.92 0.045 285);
+}
+
+@utility bg-violet-soft {
+  background: oklch(0.90 0.05 292);
+}
+
+/* ==========================================================================
+   Pinned editorial chapters — the stage stays fixed while scrolling and the
+   content swaps inside it (Greta-style). Pure CSS scroll-driven animation:
+   all content ships in the initial HTML, nothing runs on scroll, and every
+   rule is gated so unsupported browsers / reduced-motion users get the
+   normal stacked layout.
+   ========================================================================== */
+
+@supports (animation-timeline: view()) {
+  @media (max-width: 1023.98px) and (prefers-reduced-motion: no-preference) {
+    .pin-panel {
+      animation: editorial-enter both linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+  }
+}
+
+/* Metric cell dividers: the metric IS the panel now, so column rules key off
+   panel position inside the pinned grid (child 1 = chapter opener). */
+@media (max-width: 767.98px) {
+  .pin-chapter .pin-grid .editorial-metric {
+    border-left: 1px solid color-mix(in oklab, var(--ink-foreground) 30%, transparent);
+  }
+
+  .pin-chapter .pin-grid .editorial-metric:nth-child(2),
+  .pin-chapter .pin-grid .editorial-metric:nth-child(4) {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .editorial-hero {
+    padding: 2rem 1.25rem 0;
+  }
+
+  .editorial-hero > .pin-stage {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .editorial-hero-pin-grid {
+    display: contents;
+  }
+
+  .editorial-hero-panel:first-child {
+    order: 0;
+    min-height: calc(100svh - 10rem);
+    display: flex;
+    align-items: center;
+  }
+
+  .editorial-hero-panel:last-child {
+    order: 1;
+    min-height: calc(100svh - 4rem);
+    display: flex;
+    align-items: center;
+    padding-block: 3rem;
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    background: var(--secondary);
+  }
+
+  .editorial-hero-inner {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .editorial-hero-stage {
+    display: block;
+  }
+
+  .editorial-hero-signature {
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .editorial-hero-signature {
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .pin-chapter .pin-grid .editorial-metric {
+    border-left: 1px solid color-mix(in oklab, var(--ink-foreground) 30%, transparent);
+  }
+
+  .pin-chapter .pin-grid .editorial-metric:nth-child(2) {
+    border-left: 0;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    /* The chapter becomes a tall scroll runway; the stage pins below the header. */
+    .pin-chapter {
+      height: calc((var(--pin-n, 2) + 1) * 100svh);
+      view-timeline-name: --pin-chapter;
+      view-timeline-axis: block;
+      padding-block: 0;
+    }
+
+    .pin-chapter .pin-stage {
+      position: sticky;
+      top: 4rem;
+      height: calc(100svh - 4rem);
+      overflow: hidden;
+      display: block;
+    }
+
+    /* Mobile grids dissolve; panels become full-screen layers. */
+    .pin-chapter .pin-grid {
+      display: contents;
+    }
+
+    .pin-chapter .pin-panel {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* The grid dissolves (display: contents), so panels carry the canvas padding. */
+      padding-inline: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      animation: pin-swap linear both;
+      animation-timeline: --pin-chapter;
+      animation-range: var(--pin-start, 0%) var(--pin-end, 100%);
+    }
+
+    .pin-chapter .pin-panel--hold {
+      animation-name: pin-swap-hold;
+    }
+
+    /* Hero as a two-step pinned chapter: headline first, intro copy second. */
+    .pin-chapter.editorial-hero {
+      min-height: 0;
+      overflow: visible;
+    }
+
+    .pin-chapter.editorial-hero .pin-stage {
+      overflow: clip;
+    }
+
+    .pin-chapter.editorial-hero .editorial-hero-panel {
+      padding-inline: 0;
+    }
+
+    .pin-chapter.editorial-hero .editorial-hero-inner {
+      min-height: 0;
+      height: 100%;
+      padding-block: 2rem;
+      justify-content: center;
+    }
+
+    .pin-chapter.editorial-hero .editorial-hero-stage {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pin-chapter.editorial-hero .editorial-hero-inner--intro {
+      justify-content: center;
+    }
+
+    .pin-chapter.editorial-hero .editorial-hero-panel:last-child {
+      background: var(--secondary);
+    }
+
+    /* Full-screen restyles for chapter panels. */
+    .pin-chapter .editorial-metric {
+      border: 0;
+      min-height: 0;
+      padding: 0;
+    }
+
+    .pin-chapter .editorial-metric .metric-value {
+      font-size: clamp(4.5rem, 9vw, 8.5rem);
+      line-height: 1;
+    }
+
+    .pin-chapter .editorial-metric-label {
+      font-size: 1rem;
+    }
+
+    .pin-chapter .recognition-editorial {
+      border-top-width: 0;
+    }
+
+    .pin-chapter .pin-quote {
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .pin-chapter .pin-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+      line-height: 1.25;
+      color: var(--foreground);
+    }
+
+    .pin-chapter .pin-quote figcaption {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+@keyframes pin-swap {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  2% {
+    opacity: 1;
+    visibility: visible;
+  }
+  98% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes pin-swap-hold {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  2% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
