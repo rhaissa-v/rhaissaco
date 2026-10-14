@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useMutation } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { Check, Loader2, Send } from "lucide-react";
+import { Check, Send } from "lucide-react";
 import { toast } from "sonner";
 import { Page, SiteFooter, SiteHeader } from "@/components/site/Layout";
 import { useI18n } from "@/content/i18n";
@@ -11,9 +11,9 @@ import previewAsset from "@/assets/rhaissa-preview-serif.png.asset.json";
 
 const previewImage = `https://rhaissa.co${previewAsset.url}?v=20260904-1`;
 
-const title = "Long-term consultancy — Rhaissa V.";
+const title = "Advisory — Rhaissa V.";
 const description =
-  "Hands-on consultancy for companies and founders, connecting business and product strategy, stronger decisions, and execution.";
+  "Advisory for companies and founders, connecting business and product strategy, stronger decisions, and execution.";
 
 export const Route = createFileRoute("/partnership")({
   head: () => ({
@@ -73,7 +73,7 @@ function Partnership() {
       setError(p.formNote);
       return;
     }
-    mutation.mutate();
+    return;
   }
 
   const inputClass =
@@ -97,7 +97,7 @@ function Partnership() {
             </ul>
             <div className="card-soft mt-8 p-6">
               <p className="font-display text-2xl font-semibold">{p.priceLabel}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{p.priceNote}</p>
+              {p.priceNote ? <p className="mt-1 text-sm text-muted-foreground">{p.priceNote}</p> : null}
               {p.equityNote ? (
                 <p className="mt-3 text-xs leading-relaxed text-muted-foreground/80">{p.equityNote}</p>
               ) : null}
@@ -140,20 +140,14 @@ function Partnership() {
 
             <button
               type="submit"
-              disabled={mutation.isPending}
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+              disabled
+              aria-disabled="true"
+              className="mt-6 inline-flex w-full cursor-not-allowed select-none items-center justify-center gap-2 rounded-md border border-border bg-muted px-4 py-3 text-sm font-medium text-muted-foreground"
             >
-              {mutation.isPending ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin" /> {p.sending}
-                </>
-              ) : (
-                <>
-                  <Send className="h-4 w-4" /> {p.cta}
-                </>
-              )}
+              <Send className="h-4 w-4" /> {p.unavailable}
             </button>
-            <p className="mt-3 text-xs text-muted-foreground">{p.formNote}</p>
+            <p className="mt-3 text-xs text-muted-foreground">{p.unavailableNote}</p>
+            <p className="mt-3 text-xs italic leading-relaxed text-muted-foreground">{t.partner.disclaimer}</p>
           </form>
         </div>
       </Page>

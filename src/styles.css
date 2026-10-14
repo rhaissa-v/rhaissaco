@@ -264,7 +264,13 @@
   }
 
   html[lang="pt-BR"] .editorial-hero-copy h1 {
-    font-size: clamp(3.2rem, 13vw, 5.1rem);
+    max-width: none;
+    font-size: clamp(1.8rem, 9vw, 3.6rem);
+  }
+
+  html[lang="pt-BR"] .editorial-hero-copy h1 span,
+  html[lang="pt-BR"] .editorial-hero-copy h1 em {
+    white-space: pre-line;
   }
 
   .editorial-hero-signature {
@@ -436,7 +442,7 @@
     }
 
     html[lang="pt-BR"] .editorial-hero-copy h1 {
-      font-size: clamp(3.8rem, 6.8vw, 5.75rem);
+      font-size: clamp(3.4rem, 6.2vw, 5rem);
     }
   }
 
@@ -468,7 +474,7 @@
     }
 
     html[lang="pt-BR"] .editorial-hero-copy h1 {
-      font-size: clamp(6.4rem, min(6.4vw, 13svh), 8.25rem);
+      font-size: clamp(4.5rem, min(5.6vw, 11svh), 6rem);
     }
   }
 
@@ -481,6 +487,10 @@
 
     .editorial-hero-copy h1 {
       font-size: clamp(5.5rem, min(8.5vw, 14svh), 7.3rem);
+    }
+
+    html[lang="pt-BR"] .editorial-hero-copy h1 {
+      font-size: clamp(3.8rem, min(6vw, 11svh), 5rem);
     }
   }
 
@@ -520,6 +530,12 @@
     gap: 2rem;
     border-block: 1px solid var(--border);
     padding-block: 2.5rem;
+  }
+
+  @media (max-width: 767.98px) {
+    .work-editorial {
+      border-bottom: 0;
+    }
   }
 
   .work-editorial-brand {

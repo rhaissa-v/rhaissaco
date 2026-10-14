@@ -53,7 +53,8 @@ function Partner() {
             .map((o, i) => (
               <div
                 key={o.name}
-                className="editorial-offer-row"
+                id={bookingOfferings[i]?.id ?? `offer-${i}`}
+                className="editorial-offer-row scroll-mt-24"
               >
                 <div className="editorial-offer-copy">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -80,7 +81,7 @@ function Partner() {
                     <dl className="mt-6 max-w-md space-y-3">
                       {o.details.map((d) => (
                         <div key={d.label}>
-                          <dt className="eyebrow">{d.label}</dt>
+                          <dt className="eyebrow font-bold text-foreground">{d.label}</dt>
                           <dd className="mt-1 text-sm leading-relaxed text-muted-foreground">{d.body}</dd>
                         </div>
                       ))}
@@ -110,6 +111,7 @@ function Partner() {
         </div>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">{t.partner.confirmNote}</p>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-xs italic leading-relaxed text-muted-foreground">{t.partner.disclaimer}</p>
 
 
         <div className="mt-20">

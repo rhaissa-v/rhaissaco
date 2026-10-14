@@ -81,11 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Rhaissa V. — Lead Product Manager | Fractional Advisor" },
+      { title: "Rhaissa V. — Lead Product Manager | Advisor" },
       {
         name: "description",
         content:
-          "Working with product people, founders, and companies through mentoring, focused sessions, and hands-on consultancy.",
+          "Working with product people, founders, and companies through mentoring, focused working sessions, and strategic advisory.",
       },
       { name: "author", content: "Rhaissa V." },
       { property: "og:type", content: "website" },

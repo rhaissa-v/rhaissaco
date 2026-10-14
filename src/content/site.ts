@@ -30,8 +30,8 @@ export const certification = {
 
 export const metrics = [
   { value: "10+ yrs", label: "Leading cross-functional & distributed squads" },
+  { value: "-13%", label: "Order cancellations reduced at iFood" },
   { value: "100M+", label: "MAU product scaled at Google" },
-  { value: "€1.5M+", label: "GMV target across 11 UK markets" },
   { value: "4.95/5", label: "Advisor rating · GrowthMentor" },
 ];
 

@@ -1,6 +1,6 @@
-# rhaissa.co — Product leadership, mentoring & consultancy [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+# rhaissa.co — Product leadership, mentoring & advisory [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A bilingual site for my 1:1 mentoring, focused product sessions, and hands-on consultancy with founders and companies.
+A bilingual site for my 1:1 mentoring, focused product sessions, and advisory work with founders and companies.
 
 **Live:** [rhaissa.co](https://rhaissa.co) · **Repo:** [github.com/rhaissa-v/rhaissaco](https://github.com/rhaissa-v/rhaissaco) · **Built with:** [Lovable](https://lovable.dev) · **Refined by hand:** copy, information architecture, and product decisions.
 
@@ -30,7 +30,7 @@ These are the calls that mattered more than any line of code:
 
 **Method framed as adaptive.** For 1:1 mentoring I made the method explicitly flexible (design thinking, PM frameworks, or Management 3.0 depending on the problem), with room for an exploratory, provocation-led part when the goal is finding the real problem statement. This matches how I actually work and widens the audience beyond product/tech.
 
-**Positioning tuned for market weight.** The hero balances executive credibility (scale, metrics) with a human, approachable tone — without framing mentoring as an after-hours hobby, which would undercut the value.
+**Positioning tuned for market weight.** The hero balances executive credibility (scale, metrics) with a human, approachable tone. Availability is stated plainly — sessions run in the evening, São Paulo time — without framing the work as an after-hours hobby, which would undercut its value.
 
 **Built the booking flow into the site.** Rather than link out to a separate scheduling page, I use **Google Calendar** to check availability and create invites, and **Stripe** to take payment. The three public sessions are priced in USD ($35, $35, and $90); Brazilian visitors can contact me about alternative payment methods.
 
@@ -38,20 +38,24 @@ These are the calls that mattered more than any line of code:
 
 **Social proof curated by hand.** I didn't auto-pull testimonials. I read through my reviews and history across **LinkedIn**, **ADPList**, and **GrowthMentor**, and selected the ones that best show how I work. Having my own site lets visitors book and pay here rather than depend on a mentoring platform for that step.
 
+**Boundaries stated before payment.** Sessions and advisory requests are confirmed only with strict compliance with active NDAs and with no conflict of interest. If an incompatibility is identified, the session does not proceed and the payment is refunded in full via Stripe. The note sits on the offers page (`/partner`) and the advisory page (`/partnership`), so visitors see it before choosing a session.
+
+**Keep the offer visible when capacity is full.** Advisory is currently paused. Instead of deleting the offer, the page keeps the full context and shows a disabled request button with a short explanation — so a company with a real need knows the door exists, and why it is closed right now.
+
 ## Architecture & booking flow
 
 The booking journey is intentionally short and self-contained:
 
-1. A visitor chooses General Mentoring ($35, one 60-minute call), Product Strategy ($35, one 60-minute call), or Leadership ($90, three 60-minute calls; the first is scheduled now). Open first-call slots are Monday, Tuesday, and Thursday at 18:00 São Paulo time, displayed in the visitor's local timezone. Calendar availability and existing reservations are checked before checkout.
+1. A visitor chooses General Mentoring ($35, one 60-minute call), Product Strategy ($35, one 60-minute call), or Leadership ($90, three 60-minute calls; the first is scheduled now). Open first-call slots are Monday, Tuesday, and Thursday at 18:00 São Paulo time — after business hours by design — displayed in the visitor's local timezone. Calendar availability and existing reservations are checked before checkout.
 2. Stripe Checkout collects payment in USD while the chosen time is held briefly.
 3. Once payment is verified, the booking is finalized and a Google Calendar invitation with a Meet link is sent to the guest. I receive a separate booking notification. For a three-call package, we arrange the remaining two calls together.
 4. The visitor sees their session details and meeting link on the `/booked` confirmation page.
 
 This removes the manual back-and-forth that usually happens on mentoring platforms and gives me full ownership of the relationship.
 
-## Custom scope requests (consultancy form)
+## Advisory requests
 
-Alongside the three bookable offers, the site has a fourth offer: **Long-term Consultancy**, with a custom scope rather than a fixed price. It supports consulting engagements or fractional leadership for companies and founders at a weekly or monthly cadence. Instead of Stripe, its *"Submit request"* link opens `/partnership`, with context on one side and a short form on the other (Full name · Email · "How can I help you?", all required).
+Alongside the three bookable offers, the site has a fourth: **Tailored Advisory**, a light-touch engagement for companies and founders — a few hours a week, never a full-time role, with a custom scope rather than a fixed price. New requests are paused while current capacity is filled, so the button is completely disabled with an explanation on the card. The underlying `/partnership` page remains in place with full context and a paused form (Full name · Email · "How can I help you?", all required), ready to reopen when capacity allows.
 
 Instead of relying on a Google Form embed, submissions are handled on the site:
 
@@ -82,8 +86,8 @@ src/
 - **Tailwind CSS v4** + **shadcn/ui** components
 - **Lovable Cloud** — backend and database
 - **Google Calendar API** — availability checks and event creation
-- **Gmail** — notifications to me for paid bookings and consultancy requests
-- **Google Sheets** — a second channel for logging consultancy requests
+- **Gmail** — notifications to me for paid bookings and advisory requests
+- **Google Sheets** — a second channel for logging advisory requests
 - **Stripe** — USD payment checkout for bookable sessions
 
 ## What I'd do next
@@ -95,5 +99,5 @@ src/
 
 ---
 
-Built and maintained by **Rhaissa V.** (aka Ray) — Product Leader · Mentor · Consultant.
+Built and maintained by **Rhaissa V.** (aka Ray) — Product Leader · Mentor · Advisor.
 [rhaissa.co](https://rhaissa.co) · [LinkedIn](https://www.linkedin.com/in/rhaissavitor/)

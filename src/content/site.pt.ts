@@ -26,8 +26,8 @@ export const certificationPt = {
 
 export const metricsPt = [
   { value: "10+ anos", label: "Liderando squads multifuncionais e distribuídos" },
+  { value: "-13%", label: "Redução em cancelamentos de pedidos no iFood" },
   { value: "100M+", label: "MAU em produto escalado no Google" },
-  { value: "€1,5M+", label: "Meta de GMV em 11 mercados do Reino Unido" },
   { value: "4,95/5", label: "Avaliação como advisor · GrowthMentor" },
 ];
 
