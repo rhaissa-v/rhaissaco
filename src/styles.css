@@ -265,7 +265,7 @@
 
   html[lang="pt-BR"] .editorial-hero-copy h1 {
     max-width: none;
-    font-size: clamp(1.8rem, 9vw, 3.6rem);
+    font-size: clamp(2rem, 10vw, 4rem);
   }
 
   html[lang="pt-BR"] .editorial-hero-copy h1 span,
@@ -442,7 +442,7 @@
     }
 
     html[lang="pt-BR"] .editorial-hero-copy h1 {
-      font-size: clamp(3.4rem, 6.2vw, 5rem);
+      font-size: clamp(3.75rem, 6.8vw, 5.5rem);
     }
   }
 
@@ -474,7 +474,7 @@
     }
 
     html[lang="pt-BR"] .editorial-hero-copy h1 {
-      font-size: clamp(4.5rem, min(5.6vw, 11svh), 6rem);
+      font-size: clamp(4.9rem, min(6.1vw, 12svh), 6.6rem);
     }
   }
 
@@ -490,7 +490,7 @@
     }
 
     html[lang="pt-BR"] .editorial-hero-copy h1 {
-      font-size: clamp(3.8rem, min(6vw, 11svh), 5rem);
+      font-size: clamp(4.2rem, min(6.6vw, 12svh), 5.5rem);
     }
   }
 
@@ -603,42 +603,77 @@
 
   .editorial-offer-row {
     display: grid;
-    gap: 2rem;
-    align-items: center;
+    gap: 1.75rem;
     border-bottom: 1px solid var(--border);
-    padding-block: 2.25rem;
+    padding-block: 2.5rem;
+  }
+
+  .editorial-offer-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
   }
 
   .editorial-offer-copy h2,
   .editorial-offer-copy h3 {
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
     font-family: var(--font-display);
-    font-size: clamp(2.2rem, 5vw, 4.75rem);
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
     font-weight: 700;
     line-height: 1.1;
     overflow-wrap: anywhere;
   }
 
-  .editorial-offer-copy > p:not(.eyebrow) {
-    max-width: 52ch;
-    margin-top: 0.85rem;
+  .editorial-offer-summary {
+    max-width: 62ch;
+    margin-top: 0.25rem;
     color: var(--muted-foreground);
     line-height: 1.65;
   }
 
   .editorial-offer-action {
-    min-width: min(100%, 13rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem 1.25rem;
+  }
+
+  .editorial-offer-price {
+    text-align: left;
+  }
+
+  .editorial-offer-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .editorial-offer-body {
+    display: grid;
+    gap: 1.5rem;
   }
 
   @media (min-width: 768px) {
     .editorial-offer-row {
-      grid-template-columns: minmax(0, 1.45fr) minmax(13rem, 0.55fr);
-      gap: 4rem;
-      padding-block: 3rem;
+      gap: 2.25rem;
+      padding-block: 3.5rem;
     }
 
-    .editorial-offer-action {
+    .editorial-offer-body {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.5rem;
+    }
+
+    .editorial-offer-price {
       text-align: right;
+    }
+
+    .editorial-offer-cta {
+      align-items: flex-end;
     }
   }
 
