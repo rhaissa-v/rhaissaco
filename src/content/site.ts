@@ -269,9 +269,7 @@ export const offerings: Offering[] = [
     includes: [
       "3 × 60 min calls to use within 90 days",
       "Confidence, positioning, and personal brand in tech",
-      "Expat and nomad transitions: new culture, new market, new team",
-      "Advisory on career moves across LATAM and the US",
-      "Sessions in Brazilian Portuguese, English, or Spanglish",
+      "Career and leadership transitions across markets",
     ],
     details: [
       {

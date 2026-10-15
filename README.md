@@ -46,7 +46,7 @@ These are the calls that mattered more than any line of code:
 
 The booking journey is intentionally short and self-contained:
 
-1. A visitor chooses General Mentoring ($35, one 60-minute call), Product Strategy ($35, one 60-minute call), or Leadership ($90, three 60-minute calls; the first is scheduled now). Open first-call slots are Monday, Tuesday, and Thursday at 18:00 São Paulo time — after business hours by design — displayed in the visitor's local timezone. Calendar availability and existing reservations are checked before checkout.
+1. A visitor chooses General Mentoring ($35, one 60-minute call), Product Strategy ($35, one 60-minute call), or Leadership ($90, three 60-minute calls; the first is scheduled now). Open first-call slots are held after business hours by design (São Paulo time), displayed in the visitor's local timezone. Calendar availability and existing reservations are checked before checkout.
 2. Stripe Checkout collects payment in USD while the chosen time is held briefly.
 3. Once payment is verified, the booking is finalized and a Google Calendar invitation with a Meet link is sent to the guest. I receive a separate booking notification. For a three-call package, we arrange the remaining two calls together.
 4. The visitor sees their session details and meeting link on the `/booked` confirmation page.
@@ -55,7 +55,7 @@ This removes the manual back-and-forth that usually happens on mentoring platfor
 
 ## Advisory requests
 
-Alongside the three bookable offers, the site has a fourth: **Tailored Advisory**, a light-touch engagement for companies and founders — a few hours a week, never a full-time role, with a custom scope rather than a fixed price. New requests are paused while current capacity is filled, so the button is completely disabled with an explanation on the card. The underlying `/partnership` page remains in place with full context and a paused form (Full name · Email · "How can I help you?", all required), ready to reopen when capacity allows.
+Alongside the three bookable offers, the site has a fourth: **Tailored Advisory**, a light-touch engagement for companies and founders — a few hours a week, with a custom scope rather than a fixed price. New requests are paused while current capacity is filled, so the button is completely disabled with an explanation on the card. The underlying `/partnership` page remains in place with full context and a paused form (Full name · Email · "How can I help you?", all required), ready to reopen when capacity allows.
 
 Instead of relying on a Google Form embed, submissions are handled on the site:
 

@@ -239,9 +239,7 @@ export const offeringsPt: Offering[] = [
     includes: [
       "3 × 60 min para usar em até 90 dias",
       "Confiança, posicionamento e marca pessoal em tech",
-      "Vida expat e nômade: nova cultura, novo mercado, novo time",
-      "Advisory em transições de carreira entre LATAM e EUA",
-      "Sessões em português, inglês ou spanglish",
+      "Transições de carreira e liderança entre mercados",
     ],
     details: [
       {

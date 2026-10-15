@@ -110,8 +110,14 @@ function Partner() {
           <PartnershipCard />
         </div>
 
-        <p className="mt-6 text-center text-xs text-muted-foreground">{t.partner.confirmNote}</p>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-xs italic leading-relaxed text-muted-foreground">{t.partner.disclaimer}</p>
+        <section className="mt-20" aria-labelledby="caveats-title">
+          <p className="eyebrow">{t.partner.caveatsEyebrow}</p>
+          <h2 id="caveats-title" className="mt-3 text-2xl font-semibold sm:text-3xl">{t.partner.caveatsTitle}</h2>
+          <div className="mt-6 max-w-2xl space-y-4">
+            <p className="text-base leading-relaxed text-muted-foreground">{t.partner.confirmNote}</p>
+            <p className="text-base leading-relaxed text-muted-foreground">{t.partner.disclaimer}</p>
+          </div>
+        </section>
 
 
         <div className="mt-20">

@@ -167,6 +167,8 @@ const uiEn = {
     confirmNote:
       "Booking is only confirmed after payment. For Brazilians: reach out for alternative methods if needed.",
     disclaimer: "Sessions and advisory requests are confirmed only with strict compliance with active NDAs with my current partners and no conflicts of interest. If any incompatibility is identified, the session will not proceed and the payment will be fully refunded via Stripe.",
+    caveatsEyebrow: "Be aware",
+    caveatsTitle: "Caveats",
     processEyebrow: "The process",
     processTitle: "How it works",
 
@@ -185,14 +187,11 @@ const uiEn = {
     unavailableNote: "New advisory requests are temporarily paused due to current capacity. New spots will open soon.",
     equityNote: "",
     summary:
-      "Support beyond one session: business and product strategy, stronger decisions, and execution. Light-touch by design: a few hours a week, never a full-time role.",
+      "Support beyond one session: business and product strategy, stronger decisions, and execution. Light-touch by design: a few hours a week.",
     includes: [
-      "A few hours a week — no full-time commitment",
-      "Business and product strategy",
-      "Opportunity, discovery, and performance reviews",
+      "A few hours a week",
+      "Business and product strategy & execution",
       "Executive alignment and decision support",
-      "Advisory when deeper involvement is needed",
-      "Async support between sessions",
     ],
     cta: "Submit request",
     sending: "Sending…",
@@ -388,6 +387,8 @@ const uiPt: Ui = {
     confirmNote:
       "O agendamento só é confirmado após o pagamento. Brasileiros: falem comigo sobre métodos alternativos, se precisarem.",
     disclaimer: "Sessões e projetos são confirmados mediante conformidade estrita com os acordos de confidencialidade (NDAs) ativos com meus parceiros atuais e ausência de conflitos de interesse. Caso seja identificada qualquer incompatibilidade, a sessão não será realizada e o valor pago será integralmente reembolsado via Stripe.",
+    caveatsEyebrow: "Atenção",
+    caveatsTitle: "Ressalvas",
     processEyebrow: "O processo",
     processTitle: "Como funciona",
 
@@ -406,14 +407,11 @@ const uiPt: Ui = {
     unavailableNote: "Novas solicitações de advisory estão temporariamente suspensas devido à capacidade atual. Novas vagas serão abertas em breve.",
     equityNote: "",
     summary:
-      "Advisory para apoio além de uma sessão, conectando estratégia de negócio e produto, decisões mais fortes e execução. Leve por design: algumas horas por semana, nunca em tempo integral.",
+      "Advisory para apoio além de uma sessão, conectando estratégia de negócio e produto, decisões mais fortes e execução. Leve por design: algumas horas por semana.",
     includes: [
-      "Algumas horas por semana — sem compromisso integral",
-      "Estratégia de negócio e produto",
-      "Revisões de oportunidades, discovery e performance",
-      "Alinhamento executivo e apoio à tomada de decisão",
-      "Assessoria fracionada quando for preciso um envolvimento maior",
-      "Suporte assíncrono entre as sessões",
+      "Algumas horas por semana",
+      "Estratégia de negócio e produto & execução",
+      "Alinhamento executivo e apoio em decisões",
     ],
     cta: "Enviar solicitação",
     sending: "Enviando…",
