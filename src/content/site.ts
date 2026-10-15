@@ -193,6 +193,8 @@ export const offerings: Offering[] = [
   {
     name: "1:1 General Mentoring",
     price: "35 USD",
+    compareAtPrice: "50 USD",
+    discountLabel: "30% OFF",
     duration: "60 min · 1:1 call",
     summary:
       "Career moves, confidence, hard decisions — a human, no-agenda space to sort through what is weighing on you.",

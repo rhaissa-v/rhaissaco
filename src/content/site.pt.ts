@@ -163,6 +163,8 @@ export const offeringsPt: Offering[] = [
   {
     name: "Mentoria Geral 1:1",
     price: "35 USD",
+    compareAtPrice: "50 USD",
+    discountLabel: "30% OFF",
     duration: "60 min · call 1:1",
     summary:
       "Transições de carreira, confiança, decisões difíceis — um espaço humano e sem agenda para organizar o que está te pesando.",

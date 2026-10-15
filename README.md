@@ -32,7 +32,7 @@ These are the calls that mattered more than any line of code:
 
 **Positioning tuned for market weight.** The hero balances executive credibility (scale, metrics) with a human, approachable tone. Availability is stated plainly — sessions run in the evening, São Paulo time — without framing the work as an after-hours hobby, which would undercut its value.
 
-**Built the booking flow into the site.** Rather than link out to a separate scheduling page, I use **Google Calendar** to check availability and create invites, and **Stripe** to take payment. The three public sessions are priced in USD ($35, $35, and $90); Brazilian visitors can contact me about alternative payment methods.
+**Built the booking flow into the site.** Rather than link out to a separate scheduling page, I use **Google Calendar** to check availability and create invites, and **Stripe** to take payment. The three public sessions are priced in USD ($35 and $35, each discounted from $50, and $90, discounted from $130); Brazilian visitors can contact me about alternative payment methods.
 
 **Bilingual by design.** The platform runs in **English and Portuguese** end to end — not just the marketing copy, but the whole experience — so mentees from either audience feel the product was built for them, not translated as an afterthought.
 
@@ -46,7 +46,7 @@ These are the calls that mattered more than any line of code:
 
 The booking journey is intentionally short and self-contained:
 
-1. A visitor chooses General Mentoring ($35, one 60-minute call), Product Strategy ($35, one 60-minute call), or Leadership ($90, three 60-minute calls; the first is scheduled now). Open first-call slots are held after business hours by design (São Paulo time), displayed in the visitor's local timezone. Calendar availability and existing reservations are checked before checkout.
+1. A visitor chooses General Mentoring ($35, down from $50; one 60-minute call), Product Strategy ($35, down from $50; one 60-minute call), or Leadership ($90, down from $130; three 60-minute calls; the first is scheduled now). Open first-call slots are held after business hours by design (São Paulo time), displayed in the visitor's local timezone. Calendar availability and existing reservations are checked before checkout.
 2. Stripe Checkout collects payment in USD while the chosen time is held briefly.
 3. Once payment is verified, the booking is finalized and a Google Calendar invitation with a Meet link is sent to the guest. I receive a separate booking notification. For a three-call package, we arrange the remaining two calls together.
 4. The visitor sees their session details and meeting link on the `/booked` confirmation page.
