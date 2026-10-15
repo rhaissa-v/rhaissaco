@@ -57,6 +57,8 @@ const copy = {
       </>
     ),
     required: "Please add your name, a valid email, and what you want to solve.",
+    ack: "I understand that sessions are confirmed only where no conflict of interest exists and active NDAs with my current partners are strictly observed, and that payment is refunded in full if any incompatibility is identified.",
+    ackRequired: "Please confirm you understand the confidentiality and conflict-of-interest conditions.",
     currency: "Pay in",
     converted: "Converted from USD at today's rate",
   },
@@ -81,6 +83,8 @@ const copy = {
       </>
     ),
     required: "Adicione seu nome, um e-mail válido e o que você quer resolver.",
+    ack: "Entendo que as sessões somente serão confirmadas na ausência de conflito de interesses e mediante estrita observância aos acordos de confidencialidade (NDAs) vigentes firmados com meus parceiros atuais, e que o valor pago será integralmente reembolsado caso seja identificada qualquer incompatibilidade.",
+    ackRequired: "Confirme que você entende as condições de sigilo e de conflito de interesses.",
     currency: "Pagar em",
     converted: "Convertido do valor em USD pela cotação de hoje",
   },
@@ -92,7 +96,7 @@ function Book() {
   const search = Route.useSearch();
   const navigate = useNavigate();
 
-  const offeringId = bookingOfferings.some((o) => o.id === search.offering)
+  const offeringId = bookingOfferings.some((o) => o.id === search.offering && !o.paused)
     ? search.offering!
     : bookingOfferings[0]!.id;
   const offering = bookingOfferings.find((o) => o.id === offeringId)!;
@@ -106,6 +110,7 @@ function Book() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
+  const [ack, setAck] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const baseCurrency = offering.currency ?? "usd";
   const [currency, setCurrency] = useState<"usd" | "brl">(baseCurrency);
@@ -172,6 +177,7 @@ function Book() {
     ) {
       return setError(t.required);
     }
+    if (!ack) return setError(t.ackRequired);
     mutation.mutate({ startsAt: selected });
   }
 
@@ -294,6 +300,19 @@ function Book() {
             ) : null}
 
             {error ? <p className="mt-4 text-sm text-destructive">{error}</p> : null}
+
+            <label className="mt-5 flex items-start gap-3 rounded-md border border-border bg-secondary/40 p-3 text-xs leading-relaxed text-muted-foreground">
+              <input
+                type="checkbox"
+                checked={ack}
+                onChange={(e) => {
+                  setAck(e.target.checked);
+                  if (e.target.checked) setError(null);
+                }}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+              />
+              <span>{t.ack}</span>
+            </label>
 
             <button
               type="button"
