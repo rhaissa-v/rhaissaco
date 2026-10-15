@@ -60,7 +60,7 @@ export const startBooking = createServerFn({ method: "POST" })
     const { offerings } = await import("@/content/site");
 
     const offering = bookingOfferingById(data.offeringId);
-    if (!offering) throw new Error("Unknown offering");
+    if (!offering || offering.paused) throw new Error("Unknown offering");
     const offeringName = offerings[offering.index]?.name ?? data.offeringId;
 
     // Prices are authored in USD; BRL is converted from the USD amount at the live rate.
