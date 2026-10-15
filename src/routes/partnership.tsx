@@ -147,7 +147,9 @@ function Partnership() {
               <Send className="h-4 w-4" /> {p.unavailable}
             </button>
             <p className="mt-3 text-xs text-muted-foreground">{p.unavailableNote}</p>
-            <p className="mt-3 text-xs italic leading-relaxed text-muted-foreground">{t.partner.disclaimer}</p>
+            <p className="mt-4 border-t border-border/60 pt-4 text-xs leading-relaxed text-muted-foreground/70">
+              {t.legal.notice}
+            </p>
           </form>
         </div>
       </Page>
