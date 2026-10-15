@@ -13,12 +13,14 @@ export type BookingOffering = {
   sessions: number;
   /** Hidden from public menus; reachable only by direct URL. */
   hidden?: boolean;
+  /** Temporarily not bookable; shown as unavailable. */
+  paused?: boolean;
 };
 
 export const bookingOfferings: BookingOffering[] = [
   { id: "general-mentorship", index: 0, durationMinutes: 60, amountCents: 3500, sessions: 1 },
   { id: "product-strategy", index: 1, durationMinutes: 60, amountCents: 3500, sessions: 1 },
-  { id: "leadership-sessions", index: 2, durationMinutes: 60, amountCents: 9000, sessions: 3 },
+  { id: "leadership-sessions", index: 2, durationMinutes: 60, amountCents: 9000, sessions: 3, paused: true },
   { id: "test-1usd", index: 3, durationMinutes: 60, amountCents: 500, currency: "brl", sessions: 1, hidden: true },
 ];
 
@@ -31,14 +33,13 @@ export const availability = {
   timeZone: "America/Sao_Paulo",
   utcOffsetHours: -3,
   /** 1 = Monday … 7 = Sunday */
-  weekdays: [1, 2, 4],
+  weekdays: [2, 4],
   /** Exact local start times offered (São Paulo). */
-  startTimes: ["18:00"] as const,
+  startTimes: ["19:00"] as const,
   /** Per-weekday overrides of the local start times. */
   startTimesByWeekday: {
-    1: ["18:00"],
-    2: ["18:00"],
-    4: ["18:00"],
+    2: ["19:00"],
+    4: ["19:00"],
   } as Record<number, string[]>,
 
   /** How many days ahead to offer. */
