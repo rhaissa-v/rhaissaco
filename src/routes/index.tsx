@@ -263,33 +263,50 @@ function Home() {
                   <div key={o.name} className="pin-panel" style={pinStyle(panel, servicesCount)}>
                     <div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-center">
                       <div className="editorial-offer-row">
-                        <div className="editorial-offer-copy">
-                          <p className={`eyebrow ${accentRing[o.accent]}`}>{o.duration}</p>
-                          <h3>{o.name}</h3>
-                          <p>{o.summary}</p>
-                        </div>
-                        <div className="editorial-offer-action">
-                          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                          <p className="font-display text-2xl font-semibold">{o.price}</p>
-                          {o.compareAtPrice ? (
-                            <span className="text-sm font-medium text-muted-foreground line-through">
-                              {o.compareAtPrice}
-                            </span>
-                          ) : null}
-                          {o.discountLabel ? (
-                            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-widest text-primary">
-                              {o.discountLabel}
-                            </span>
-                          ) : null}
+                        <div className="editorial-offer-head">
+                          <div className="editorial-offer-copy">
+                            <p className={`eyebrow ${accentRing[o.accent]}`}>{o.duration}</p>
+                            <h3>{o.name}</h3>
                           </div>
-                          <Link
-                            to="/book"
-                            search={{ offering: bookingOfferings[i]?.id }}
-                            className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                          >
-                            <CalendarDays className="h-4 w-4" /> {t.partner.bookTime}
-                          </Link>
+                          <div className="editorial-offer-action">
+                            <div className="editorial-offer-price">
+                              <p className="font-display text-2xl font-semibold">{o.price}</p>
+                              {o.compareAtPrice || o.discountLabel ? (
+                                <div className="editorial-offer-note mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                  {o.compareAtPrice ? (
+                                    <span className="text-sm font-medium text-muted-foreground line-through">
+                                      {o.compareAtPrice}
+                                    </span>
+                                  ) : null}
+                                  {o.discountLabel ? (
+                                    <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-widest text-primary">
+                                      {o.discountLabel}
+                                    </span>
+                                  ) : null}
+                                </div>
+                              ) : null}
+                            </div>
+                            {bookingOfferings[i]?.paused ? (
+                              <div className="editorial-offer-cta">
+                                <button type="button" disabled aria-disabled="true" className="inline-flex cursor-not-allowed select-none items-center justify-center gap-2 rounded-md border border-border bg-muted px-4 py-3 text-sm font-medium text-muted-foreground">
+                                  <CalendarDays className="h-4 w-4" /> {t.partnership.unavailable}
+                                </button>
+                                <p className="text-xs text-muted-foreground">{t.partnership.unavailableNote}</p>
+                              </div>
+                            ) : (
+                              <div className="editorial-offer-cta">
+                                <Link
+                                  to="/book"
+                                  search={{ offering: bookingOfferings[i]?.id }}
+                                  className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                                >
+                                  <CalendarDays className="h-4 w-4" /> {t.partner.bookTime}
+                                </Link>
+                              </div>
+                            )}
+                          </div>
                         </div>
+                        <p className="editorial-offer-summary">{o.summary}</p>
                       </div>
                     </div>
                   </div>
@@ -298,7 +315,6 @@ function Home() {
               <div className="pin-panel pin-panel--hold" style={pinStyle(servicesCount - 1, servicesCount)}>
                 <div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-center">
                   <PartnershipCard />
-                  <p className="mt-6 text-center text-xs text-muted-foreground">{t.partner.confirmNote}</p>
                 </div>
               </div>
             </div>
