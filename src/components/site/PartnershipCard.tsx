@@ -7,24 +7,29 @@ export function PartnershipCard() {
 
   return (
     <div id="advisory" className="editorial-offer-row scroll-mt-24">
-      <div className="editorial-offer-copy">
-        <p className="eyebrow text-violet">{p.duration}</p>
-        <h3>{p.name}</h3>
-        <p>{p.summary}</p>
+      <div className="editorial-offer-head">
+        <div className="editorial-offer-copy">
+          <p className="eyebrow text-violet">{p.duration}</p>
+          <h3>{p.name}</h3>
+        </div>
+        <div className="editorial-offer-action">
+          <div className="editorial-offer-price">
+            <p className="font-display text-3xl font-semibold">{p.priceLabel}</p>
+            <p className="text-xs text-muted-foreground">{p.unavailableNote}</p>
+          </div>
+          <div className="editorial-offer-cta">
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              className="inline-flex cursor-not-allowed select-none items-center justify-center gap-2 rounded-md border border-border bg-muted px-4 py-3 text-sm font-medium text-muted-foreground"
+            >
+              <Send className="h-4 w-4" /> {p.unavailable}
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="editorial-offer-action">
-        <p className="font-display text-2xl font-semibold">{p.priceLabel}</p>
-        <p className="mt-1 text-xs text-muted-foreground">{p.unavailableNote}</p>
-
-        <button
-          type="button"
-          disabled
-          aria-disabled="true"
-          className="mt-5 inline-flex cursor-not-allowed select-none items-center justify-center gap-2 rounded-md border border-border bg-muted px-4 py-3 text-sm font-medium text-muted-foreground"
-        >
-          <Send className="h-4 w-4" /> {p.unavailable}
-        </button>
-      </div>
+      <p className="editorial-offer-summary">{p.summary}</p>
     </div>
   );
 }
