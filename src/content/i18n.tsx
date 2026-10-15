@@ -45,7 +45,7 @@ const uiEn = {
   },
   legal: {
     notice:
-      "Sessions are confirmed only where no conflict of interest exists and active NDAs with my current partners are strictly observed. Both parties agree to maintain confidentiality and act in good faith regarding all information shared. Should any incompatibility be identified, the session will not take place and payment will be refunded in full via Stripe.",
+      "Sessions are happening only where no conflict of interest exists and active NDAs with my current partners are strictly observed. Both parties agree to maintain confidentiality and act in good faith regarding all information shared. Should any incompatibility be identified, the session will not take place and payment will be refunded in full via Stripe.",
   },
   home: {
     eyebrow: "Rio de Janeiro · LATAM-based · works globally",
@@ -78,7 +78,7 @@ const uiEn = {
     adplistLink: "20+ reviews on ADPList →",
     ctaTitle: "Need clarity on a product or business challenge?",
     ctaBody: "Choose a focused session or request strategic advisory — direct, data-driven, and human.",
-    ctaStart: "Explore ways to work together",
+    ctaStart: "Check how to partner",
     portraitAlt: "Rhaissa “Ray” V. speaking at Rio Innovation Week",
   },
   mentoring: {
@@ -297,7 +297,7 @@ const uiPt: Ui = {
     adplistLink: "20+ avaliações no ADPList →",
     ctaTitle: "Precisa de clareza em um desafio de produto ou negócio?",
     ctaBody: "Escolha uma sessão focada ou solicite advisory estratégico — direta, orientada a dados e humana.",
-    ctaStart: "Conheça as formas de trabalhar comigo",
+    ctaStart: "Veja como trabalhar comigo",
     portraitAlt: "Rhaissa “Ray” V. palestrando na Rio Innovation Week",
   },
   mentoring: {
@@ -397,7 +397,7 @@ const uiPt: Ui = {
     newTab: "abre em uma nova aba",
   },
   partnership: {
-    name: "Advisory",
+    name: "Tailored Advisory",
     duration: "Algumas horas por semana · empresas e founders",
     priceLabel: "Escopo sob medida",
     priceNote: "",

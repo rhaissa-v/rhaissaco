@@ -268,22 +268,47 @@ function Home() {
                             <p className={`eyebrow ${accentRing[o.accent]}`}>{o.duration}</p>
                             <h3>{o.name}</h3>
                           </div>
-                          <div className="editorial-offer-action">
+                          <div
+                            className={`editorial-offer-action${
+                              bookingOfferings[i]?.paused ? " editorial-offer-action--stacked" : ""
+                            }`}
+                          >
                             <div className="editorial-offer-price">
-                              <p className="font-display text-2xl font-semibold">{o.price}</p>
-                              {o.compareAtPrice || o.discountLabel ? (
-                                <div className="editorial-offer-note mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                              {bookingOfferings[i]?.paused ? (
+                                <p className="font-display text-2xl font-semibold whitespace-nowrap">
+                                  {o.price}
                                   {o.compareAtPrice ? (
-                                    <span className="text-sm font-medium text-muted-foreground line-through">
+                                    <span className="ml-3 text-sm font-medium text-muted-foreground line-through">
                                       {o.compareAtPrice}
                                     </span>
                                   ) : null}
                                   {o.discountLabel ? (
-                                    <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-widest text-primary">
+                                    <span className="ml-2 rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-widest text-primary">
                                       {o.discountLabel}
                                     </span>
                                   ) : null}
-                                </div>
+                                </p>
+                              ) : (
+                                <>
+                                  <p className="font-display text-2xl font-semibold">{o.price}</p>
+                                  {o.compareAtPrice || o.discountLabel ? (
+                                    <div className="editorial-offer-note mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                      {o.compareAtPrice ? (
+                                        <span className="text-sm font-medium text-muted-foreground line-through">
+                                          {o.compareAtPrice}
+                                        </span>
+                                      ) : null}
+                                      {o.discountLabel ? (
+                                        <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-widest text-primary">
+                                          {o.discountLabel}
+                                        </span>
+                                      ) : null}
+                                    </div>
+                                  ) : null}
+                                </>
+                              )}
+                              {bookingOfferings[i]?.paused ? (
+                                <p className="mt-2 text-xs text-muted-foreground">{t.partnership.unavailableNote}</p>
                               ) : null}
                             </div>
                             {bookingOfferings[i]?.paused ? (
@@ -291,7 +316,6 @@ function Home() {
                                 <button type="button" disabled aria-disabled="true" className="inline-flex cursor-not-allowed select-none items-center justify-center gap-2 rounded-md border border-border bg-muted px-4 py-3 text-sm font-medium text-muted-foreground">
                                   <CalendarDays className="h-4 w-4" /> {t.partnership.unavailable}
                                 </button>
-                                <p className="text-xs text-muted-foreground">{t.partnership.unavailableNote}</p>
                               </div>
                             ) : (
                               <div className="editorial-offer-cta">

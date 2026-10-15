@@ -12,10 +12,10 @@ export function PartnershipCard() {
           <p className="eyebrow text-violet">{p.duration}</p>
           <h3>{p.name}</h3>
         </div>
-        <div className="editorial-offer-action">
+        <div className="editorial-offer-action editorial-offer-action--stacked">
           <div className="editorial-offer-price">
-            <p className="font-display text-3xl font-semibold">{p.priceLabel}</p>
-            <p className="text-xs text-muted-foreground">{p.unavailableNote}</p>
+            <p className="font-display text-3xl font-semibold whitespace-nowrap">{p.priceLabel}</p>
+            <p className="mt-2 text-xs text-muted-foreground">{p.unavailableNote}</p>
           </div>
           <div className="editorial-offer-cta">
             <button

@@ -128,7 +128,7 @@ export const career = [
 
 export const caseStudies = [
   {
-    tag: "B2B SaaS · Quqo · 2025 — Now",
+    tag: "B2B SaaS · Quqo · 2025 — 2026",
     title: "0→1 procure-to-pay platform for clinic buyers",
     result: "600+ clinic accounts · 11 UK markets · €1.5M+ GMV target",
     body: "Part of the global team for a procure-to-pay app, partnering with the executive leadership team. Co-leads platform product strategy and operational transformation for a healthcare SaaS scaling at 89%+ activation, plus API/data architecture across D365, SAP, and 20+ vendor integrations.",
@@ -270,6 +270,7 @@ export const offerings: Offering[] = [
       "3 × 60 min calls to use within 90 days",
       "Confidence, positioning, and personal brand in tech",
       "Career and leadership transitions across markets",
+      "The second and third sessions are scheduled afterward, based on the outcomes of the first one",
     ],
     details: [
       {
@@ -290,7 +291,6 @@ export const offerings: Offering[] = [
       },
     ],
 
-    footnote: "The second and third sessions are scheduled afterward, based on the outcomes of the first one.",
     accent: "teal",
     checkoutUrl: packagePaymentUrl,
   },

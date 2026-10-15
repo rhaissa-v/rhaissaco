@@ -122,7 +122,7 @@ export const careerPt = [
 
 export const caseStudiesPt = [
   {
-    tag: "SaaS B2B · Quqo · 2025 — Hoje",
+    tag: "SaaS B2B · Quqo · 2025 — 2026",
     title: "Plataforma de procure-to-pay 0→1 para clínicas",
     result: "600+ contas de clínicas · 11 mercados do Reino Unido · meta de €1,5M+ de GMV",
     body: "Parte do time global de um app de procure-to-pay, em parceria com a liderança executiva. Co-lidera a estratégia de produto e a transformação operacional de um SaaS de saúde com 89%+ de ativação, além da arquitetura de API/dados entre D365, SAP e 20+ integrações de fornecedores.",
@@ -240,6 +240,7 @@ export const offeringsPt: Offering[] = [
       "3 × 60 min para usar em até 90 dias",
       "Confiança, posicionamento e marca pessoal em tech",
       "Transições de carreira e liderança entre mercados",
+      "A segunda e a terceira sessão serão agendadas depois da evolução do primeiro encontro",
     ],
     details: [
       {
@@ -259,7 +260,6 @@ export const offeringsPt: Offering[] = [
         body: "Um plano de 90 dias por escrito para sua meta de visibilidade, liderança ou mudança de país, mais artefatos de apoio depois de cada call.",
       },
     ],
-    footnote: "A segunda e a terceira sessão serão agendadas depois da evolução do primeiro encontro.",
     accent: "teal",
     checkoutUrl: packagePaymentUrl,
   },

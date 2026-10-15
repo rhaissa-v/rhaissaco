@@ -68,14 +68,43 @@ function Partner() {
                     </div>
                     <h2>{o.name}</h2>
                   </div>
-                  <div className="editorial-offer-action">
+                  <div
+                    className={`editorial-offer-action${
+                      bookingOfferings[i]?.paused ? " editorial-offer-action--stacked" : ""
+                    }`}
+                  >
                     <div className="editorial-offer-price">
-                      <p className="font-display text-3xl font-semibold">{o.price}</p>
-                      {o.compareAtPrice || o.discountLabel ? (
-                        <div className="editorial-offer-note mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                          {o.compareAtPrice ? <span className="text-sm font-medium text-muted-foreground line-through">{o.compareAtPrice}</span> : null}
-                          {o.discountLabel ? <span className="text-xs font-semibold text-primary">{o.discountLabel}</span> : null}
-                        </div>
+                      {bookingOfferings[i]?.paused ? (
+                        <p className="font-display text-3xl font-semibold whitespace-nowrap">
+                          {o.price}
+                          {o.compareAtPrice ? (
+                            <span className="ml-3 text-base font-medium text-muted-foreground line-through">
+                              {o.compareAtPrice}
+                            </span>
+                          ) : null}
+                          {o.discountLabel ? (
+                            <span className="ml-2 text-xs font-semibold text-primary">{o.discountLabel}</span>
+                          ) : null}
+                        </p>
+                      ) : (
+                        <>
+                          <p className="font-display text-3xl font-semibold whitespace-nowrap">{o.price}</p>
+                          {o.compareAtPrice || o.discountLabel ? (
+                            <div className="editorial-offer-note mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                              {o.compareAtPrice ? (
+                                <span className="text-sm font-medium text-muted-foreground line-through">
+                                  {o.compareAtPrice}
+                                </span>
+                              ) : null}
+                              {o.discountLabel ? (
+                                <span className="text-xs font-semibold text-primary">{o.discountLabel}</span>
+                              ) : null}
+                            </div>
+                          ) : null}
+                        </>
+                      )}
+                      {bookingOfferings[i]?.paused ? (
+                        <p className="mt-2 text-xs text-muted-foreground">{t.partnership.unavailableNote}</p>
                       ) : null}
                     </div>
                     {bookingOfferings[i]?.paused ? (
@@ -83,7 +112,6 @@ function Partner() {
                         <button type="button" disabled aria-disabled="true" className="inline-flex cursor-not-allowed select-none items-center justify-center gap-2 rounded-md border border-border bg-muted px-4 py-3 text-sm font-medium text-muted-foreground">
                           <CalendarDays className="h-4 w-4" /> {t.partnership.unavailable}
                         </button>
-                        <p className="text-xs text-muted-foreground">{t.partnership.unavailableNote}</p>
                       </div>
                     ) : (
                       <div className="editorial-offer-cta">
@@ -143,6 +171,9 @@ function Partner() {
               </div>
             ))}
           </div>
+          <p className="mt-8 max-w-3xl text-xs leading-relaxed text-muted-foreground/70">
+            {t.legal.notice}
+          </p>
         </div>
 
         <div className="surface-ink mt-20 rounded-2xl px-8 py-12 sm:px-12">
@@ -158,10 +189,6 @@ function Partner() {
             {t.partner.talkCta} <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
-
-        <p className="mt-10 max-w-3xl text-xs leading-relaxed text-muted-foreground/70">
-          {t.legal.notice}
-        </p>
       </Page>
       <SiteFooter />
     </div>
