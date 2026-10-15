@@ -56,19 +56,52 @@ function Partner() {
                 id={bookingOfferings[i]?.id ?? `offer-${i}`}
                 className="editorial-offer-row scroll-mt-24"
               >
-                <div className="editorial-offer-copy">
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-                    <p className={`eyebrow ${accent[o.accent]}`}>{o.duration}</p>
-                    {o.featured ? (
-                      <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-0.5 text-xs font-semibold text-primary">
-                        {t.partner.mostRequested}
-                      </span>
-                    ) : null}
+                <div className="editorial-offer-head">
+                  <div className="editorial-offer-copy">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                      <p className={`eyebrow ${accent[o.accent]}`}>{o.duration}</p>
+                      {o.featured ? (
+                        <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-0.5 text-xs font-semibold text-primary">
+                          {t.partner.mostRequested}
+                        </span>
+                      ) : null}
+                    </div>
+                    <h2>{o.name}</h2>
                   </div>
-                  <h2>{o.name}</h2>
-                  <p>{o.summary}</p>
+                  <div className="editorial-offer-action">
+                    <div className="editorial-offer-price">
+                      <p className="font-display text-3xl font-semibold">{o.price}</p>
+                      {o.compareAtPrice || o.discountLabel ? (
+                        <div className="editorial-offer-note mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                          {o.compareAtPrice ? <span className="text-sm font-medium text-muted-foreground line-through">{o.compareAtPrice}</span> : null}
+                          {o.discountLabel ? <span className="text-xs font-semibold text-primary">{o.discountLabel}</span> : null}
+                        </div>
+                      ) : null}
+                    </div>
+                    {bookingOfferings[i]?.paused ? (
+                      <div className="editorial-offer-cta">
+                        <button type="button" disabled aria-disabled="true" className="inline-flex cursor-not-allowed select-none items-center justify-center gap-2 rounded-md border border-border bg-muted px-4 py-3 text-sm font-medium text-muted-foreground">
+                          <CalendarDays className="h-4 w-4" /> {t.partnership.unavailable}
+                        </button>
+                        <p className="text-xs text-muted-foreground">{t.partnership.unavailableNote}</p>
+                      </div>
+                    ) : (
+                      <div className="editorial-offer-cta">
+                        <Link
+                          to="/book"
+                          search={{ offering: bookingOfferings[i]?.id }}
+                          className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                        >
+                          <CalendarDays className="h-4 w-4" /> {t.partner.bookTime}
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <p className="editorial-offer-summary">{o.summary}</p>
+                <div className="editorial-offer-body">
                   {o.includes?.length ? (
-                    <ul className="mt-4 max-w-md space-y-1.5">
+                    <ul className="space-y-1.5">
                       {o.includes.map((item) => (
                         <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
@@ -78,7 +111,7 @@ function Partner() {
                     </ul>
                   ) : null}
                   {o.details?.length ? (
-                    <dl className="mt-6 max-w-md space-y-3">
+                    <dl className="space-y-3">
                       {o.details.map((d) => (
                         <div key={d.label}>
                           <dt className="eyebrow font-bold text-foreground">{d.label}</dt>
@@ -88,36 +121,14 @@ function Partner() {
                     </dl>
                   ) : null}
                   {o.footnote ? (
-                    <p className="mt-4 max-w-md text-xs italic leading-relaxed text-muted-foreground">{o.footnote}</p>
+                    <p className="text-xs italic leading-relaxed text-muted-foreground md:col-span-2">{o.footnote}</p>
                   ) : null}
-                </div>
-                <div className="editorial-offer-action">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <p className="font-display text-3xl font-semibold">{o.price}</p>
-                    {o.compareAtPrice ? <span className="text-sm font-medium text-muted-foreground line-through">{o.compareAtPrice}</span> : null}
-                    {o.discountLabel ? <span className="text-xs font-semibold text-primary">{o.discountLabel}</span> : null}
-                  </div>
-                  <Link
-                    to="/book"
-                    search={{ offering: bookingOfferings[i]?.id }}
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    <CalendarDays className="h-4 w-4" /> {t.partner.bookTime}
-                  </Link>
                 </div>
               </div>
             ))}
           <PartnershipCard />
         </div>
 
-        <section className="mt-20" aria-labelledby="caveats-title">
-          <p className="eyebrow">{t.partner.caveatsEyebrow}</p>
-          <h2 id="caveats-title" className="mt-3 text-2xl font-semibold sm:text-3xl">{t.partner.caveatsTitle}</h2>
-          <div className="mt-6 max-w-2xl space-y-4">
-            <p className="text-base leading-relaxed text-muted-foreground">{t.partner.confirmNote}</p>
-            <p className="text-base leading-relaxed text-muted-foreground">{t.partner.disclaimer}</p>
-          </div>
-        </section>
 
 
         <div className="mt-20">
@@ -147,6 +158,10 @@ function Partner() {
             {t.partner.talkCta} <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
+
+        <p className="mt-10 max-w-3xl text-xs leading-relaxed text-muted-foreground/70">
+          {t.legal.notice}
+        </p>
       </Page>
       <SiteFooter />
     </div>
