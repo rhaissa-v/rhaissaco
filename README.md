@@ -38,7 +38,7 @@ These are the calls that mattered more than any line of code:
 
 **Social proof curated by hand.** I didn't auto-pull testimonials. I read through my reviews and history across **LinkedIn**, **ADPList**, and **GrowthMentor**, and selected the ones that best show how I work. Having my own site lets visitors book and pay here rather than depend on a mentoring platform for that step.
 
-**Boundaries stated before payment.** Sessions are happening only where no conflict of interest exists and active NDAs with my current partners are strictly observed. Both parties agree to maintain confidentiality and act in good faith regarding all information shared. Should any incompatibility be identified, the session does not take place and payment is refunded in full via Stripe. The note appears on the services page and in the request form, and on the booking page it is a required acknowledgement checkbox — the conditions have to be accepted before payment.
+**Boundaries stated before payment.** Sessions happen only where there is no conflict of interest and no breach of an active NDA with my current partners. Both parties keep shared information confidential and act in good faith. If any incompatibility is found, the session will not take place and payment will be refunded in full via Stripe. The note appears on the services page and in the request form, and on the booking page it is a required acknowledgement checkbox — the conditions have to be accepted before payment.
 
 **Keep the offer visible when capacity is full.** Leadership Sessions and Advisory are currently paused. Instead of deleting the offers, the page keeps the full context and shows a disabled button with a short explanation — so a company or mentee with a real need knows the door exists, and why it is closed right now.
 
@@ -55,7 +55,7 @@ This removes the manual back-and-forth that usually happens on mentoring platfor
 
 ## Advisory requests
 
-Alongside the three bookable offers, the site has a fourth: **Tailored Advisory**, a light-touch engagement for companies and founders — a few hours a week, with a custom scope rather than a fixed price. New requests are paused while current capacity is filled (as are Leadership Sessions bookings), so the button is completely disabled with an explanation on the card. The underlying `/partnership` page remains in place with full context and a paused form (Full name · Email · "How can I help you?", all required), ready to reopen when capacity allows.
+Alongside the three bookable offers, the site has a fourth: **Tailored Advisory**, a light-touch engagement for companies and founders — a few hours a week, with a custom scope rather than a fixed price. New requests are paused while current capacity is filled throughout EOY (as are Leadership Sessions bookings), so the button is completely disabled with an explanation on the card. The underlying `/partnership` page remains in place with full context and a paused form (Full name · Email · "How can I help you?", all required), ready to reopen when capacity allows.
 
 Instead of relying on a Google Form embed, submissions are handled on the site:
 

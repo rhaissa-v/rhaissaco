@@ -57,7 +57,7 @@ const copy = {
       </>
     ),
     required: "Please add your name, a valid email, and what you want to solve.",
-    ack: "I understand that sessions are confirmed only where no conflict of interest exists and active NDAs with my current partners are strictly observed, and that payment is refunded in full if any incompatibility is identified.",
+    ack: "I understand that the session is confirmed only if there is no conflict of interest and no breach of an active NDA with my current partners. If any incompatibility is found, the amount paid will be refunded in full.",
     ackRequired: "Please confirm you understand the confidentiality and conflict-of-interest conditions.",
     currency: "Pay in",
     converted: "Converted from USD at today's rate",
@@ -83,7 +83,7 @@ const copy = {
       </>
     ),
     required: "Adicione seu nome, um e-mail válido e o que você quer resolver.",
-    ack: "Entendo que as sessões somente serão confirmadas na ausência de conflito de interesses e mediante estrita observância aos acordos de confidencialidade (NDAs) vigentes firmados com meus parceiros atuais, e que o valor pago será integralmente reembolsado caso seja identificada qualquer incompatibilidade.",
+    ack: "Entendo que a sessão só será confirmada se não houver conflito de interesses nem descumprimento de NDA vigente com meus parceiros atuais. Constatada qualquer incompatibilidade, o valor pago será reembolsado integralmente.",
     ackRequired: "Confirme que você entende as condições de sigilo e de conflito de interesses.",
     currency: "Pagar em",
     converted: "Convertido do valor em USD pela cotação de hoje",

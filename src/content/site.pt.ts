@@ -44,7 +44,7 @@ export const careerPt = [
   {
     company: "Quqo",
     role: "Staff Product Manager — SaaS B2B",
-    period: "2025 — Hoje",
+    period: "2025 — Presente",
     place: "11 mercados do Reino Unido · remoto do Rio",
     points: [
       "Parte do time global de um app de procure-to-pay (P2P), em parceria com a liderança executiva.",
@@ -122,7 +122,7 @@ export const careerPt = [
 
 export const caseStudiesPt = [
   {
-    tag: "SaaS B2B · Quqo · 2025 — 2026",
+    tag: "SaaS B2B · Quqo · 2025 — Presente",
     title: "Plataforma de procure-to-pay 0→1 para clínicas",
     result: "600+ contas de clínicas · 11 mercados do Reino Unido · meta de €1,5M+ de GMV",
     body: "Parte do time global de um app de procure-to-pay, em parceria com a liderança executiva. Co-lidera a estratégia de produto e a transformação operacional de um SaaS de saúde com 89%+ de ativação, além da arquitetura de API/dados entre D365, SAP e 20+ integrações de fornecedores.",

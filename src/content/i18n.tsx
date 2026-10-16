@@ -45,14 +45,14 @@ const uiEn = {
   },
   legal: {
     notice:
-      "Sessions are happening only where no conflict of interest exists and active NDAs with my current partners are strictly observed. Both parties agree to maintain confidentiality and act in good faith regarding all information shared. Should any incompatibility be identified, the session will not take place and payment will be refunded in full via Stripe.",
+      "Sessions happen only where there is no conflict of interest and no breach of an active NDA with my current partners. Both parties keep shared information confidential and act in good faith. If any incompatibility is found, the session will not take place and payment will be refunded in full via Stripe.",
   },
   home: {
     eyebrow: "Rio de Janeiro · LATAM-based · works globally",
     h1a: "I turn data and ambiguity into ",
     h1b: "business outcomes",
     intro:
-      "10+ years across SaaS, fintech, food tech, streaming, and marketplaces — with Netflix, Google, iFood, Bradesco Next, and global consulting environments. I work with product people, founders, and companies through mentoring, focused working sessions, and strategic advisory.",
+      "10+ years across SaaS, fintech, food tech, streaming, and marketplaces — with Netflix, Google, iFood, Bradesco Next, and global consulting environments. I work with product people and founders through mentoring, focused working sessions, and strategic advisory.",
     ctaPartner: "Book a session",
     ctaViewServices: "View services",
     ctaBook: "See selected work",
@@ -78,7 +78,7 @@ const uiEn = {
     adplistLink: "20+ reviews on ADPList →",
     ctaTitle: "Need clarity on a product or business challenge?",
     ctaBody: "Choose a focused session or request strategic advisory — direct, data-driven, and human.",
-    ctaStart: "Check how to partner",
+    ctaStart: "How to partner",
     portraitAlt: "Rhaissa “Ray” V. speaking at Rio Innovation Week",
   },
   mentoring: {
@@ -171,7 +171,7 @@ const uiEn = {
     processEyebrow: "The process",
     processTitle: "How it works",
 
-    talkTitle: "Prefer to talk first?",
+    talkTitle: "No agenda right now and want to talk?",
     talkBody:
       "Message me on LinkedIn with the problem in one paragraph. If I’m not the right person, I’ll tell you who is.",
     talkCta: "Message on LinkedIn",
@@ -183,7 +183,7 @@ const uiEn = {
     priceLabel: "Custom scope",
     priceNote: "",
     unavailable: "Currently unavailable",
-    unavailableNote: "Paused due to current capacity.",
+    unavailableNote: "Paused due to current capacity throughout EOY",
     equityNote: "",
     summary:
       "Support beyond one session: business and product strategy, stronger decisions, and execution. Light-touch by design: a few hours a week.",
@@ -264,14 +264,14 @@ const uiPt: Ui = {
   },
   legal: {
     notice:
-      "As sessões somente serão confirmadas na ausência de conflito de interesses e mediante estrita observância aos acordos de confidencialidade (NDAs) vigentes firmados com meus parceiros atuais. Ambas as partes comprometem-se a observar sigilo e boa-fé quanto às informações compartilhadas. Constatada qualquer incompatibilidade, a sessão não será realizada e o valor pago será integralmente reembolsado via Stripe.",
+      "As sessões só serão confirmadas se não houver conflito de interesses nem descumprimento de NDA vigente com meus parceiros atuais. Ambas as partes se comprometem a manter sigilo e boa-fé sobre as informações compartilhadas. Constatada qualquer incompatibilidade, a sessão não será realizada e o valor pago será reembolsado integralmente via Stripe.",
   },
   home: {
     eyebrow: "Rio de Janeiro · remoto da LATAM · atuação global",
     h1a: "Transformo dados\ne ambiguidade",
     h1b: "em resultados\nde negócio",
     intro:
-      "10+ anos em SaaS, fintech, food tech, streaming e marketplaces — com Netflix, Google, iFood, Bradesco Next e ambientes globais de consultoria. Trabalho com profissionais de produto, founders e empresas por meio de mentoria, sessões práticas e advisory estratégico.",
+      "10+ anos em SaaS, fintech, food tech, streaming e marketplaces — com Netflix, Google, iFood, Bradesco Next e ambientes globais de consultoria. Trabalho com profissionais de produto e founders por meio de mentoria, sessões práticas e advisory estratégico.",
     ctaPartner: "Agendar sessão",
     ctaViewServices: "Ver serviços",
     ctaBook: "Ver trabalhos selecionados",
@@ -297,7 +297,7 @@ const uiPt: Ui = {
     adplistLink: "20+ avaliações no ADPList →",
     ctaTitle: "Precisa de clareza em um desafio de produto ou negócio?",
     ctaBody: "Escolha uma sessão focada ou solicite advisory estratégico — direta, orientada a dados e humana.",
-    ctaStart: "Veja como trabalhar comigo",
+    ctaStart: "Como trabalhar comigo",
     portraitAlt: "Rhaissa “Ray” V. palestrando na Rio Innovation Week",
   },
   mentoring: {
@@ -390,7 +390,7 @@ const uiPt: Ui = {
     processEyebrow: "O processo",
     processTitle: "Como funciona",
 
-    talkTitle: "Prefere conversar primeiro?",
+    talkTitle: "Estou sem agenda e quer conversar?",
     talkBody:
       "Me manda uma mensagem no LinkedIn com o problema em um parágrafo. Se eu não for a pessoa certa, eu te digo quem é.",
     talkCta: "Falar no LinkedIn",
@@ -402,7 +402,7 @@ const uiPt: Ui = {
     priceLabel: "Escopo sob medida",
     priceNote: "",
     unavailable: "Indisponível no momento",
-    unavailableNote: "Suspensas devido à capacidade atual.",
+    unavailableNote: "Suspensas devido à capacidade atual até o fim do ano",
     equityNote: "",
     summary:
       "Advisory para apoio além de uma sessão, conectando estratégia de negócio e produto, decisões mais fortes e execução. Leve por design: algumas horas por semana.",

@@ -13,9 +13,9 @@ import { useI18n } from "@/content/i18n";
 
 const previewImage = `https://rhaissa.co${previewAsset.url}?v=20260904-1`;
 
-const title = "Rhaissa V. — Lead Product Manager | Advisor";
+const title = "Rhaissa V. — Lead Product Manager | Fractional Advisor";
 const description =
-  "Working with product people, founders, and companies through mentoring, focused working sessions, and strategic advisory.";
+  "Working with product people and founders through mentoring, focused working sessions, and strategic advisory.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

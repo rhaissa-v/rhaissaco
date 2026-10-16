@@ -974,3 +974,9 @@
     visibility: visible;
   }
 }
+
+@media (max-width: 767px) {
+  .editorial-offer-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .editorial-offer-action { margin-left: 0; width: 100%; align-items: flex-start; }
+  .editorial-offer-price, .editorial-offer-price p { white-space: normal; }
+}
