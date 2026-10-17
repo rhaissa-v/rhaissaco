@@ -183,7 +183,7 @@ const uiEn = {
     priceLabel: "Custom scope",
     priceNote: "",
     unavailable: "Currently unavailable",
-    unavailableNote: "Paused due to current capacity throughout EOY",
+    unavailableNote: "Paused due to current capacity",
     equityNote: "",
     summary:
       "Support beyond one session: business and product strategy, stronger decisions, and execution. Light-touch by design: a few hours a week.",
@@ -402,7 +402,7 @@ const uiPt: Ui = {
     priceLabel: "Escopo sob medida",
     priceNote: "",
     unavailable: "Indisponível no momento",
-    unavailableNote: "Suspensas devido à capacidade atual até o fim do ano",
+    unavailableNote: "Suspensas devido à disponibilidade atual",
     equityNote: "",
     summary:
       "Advisory para apoio além de uma sessão, conectando estratégia de negócio e produto, decisões mais fortes e execução. Leve por design: algumas horas por semana.",

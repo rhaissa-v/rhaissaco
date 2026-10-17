@@ -281,8 +281,8 @@ function Book() {
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder={t.notes}
-                rows={3}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                rows={6}
+                className="min-h-36 w-full resize-y rounded-md border border-border bg-background px-3 py-2 text-sm"
               />
             </div>
 
@@ -333,7 +333,7 @@ function Book() {
 
             <div className="mt-6 flex flex-wrap gap-2">
               {bookingOfferings
-                .filter((o) => o.id !== offeringId && !o.hidden)
+                .filter((o) => o.id !== offeringId && !o.hidden && !o.paused)
                 .map((o) => (
                   <button
                     key={o.id}

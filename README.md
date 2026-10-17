@@ -55,7 +55,7 @@ This removes the manual back-and-forth that usually happens on mentoring platfor
 
 ## Advisory requests
 
-Alongside the three bookable offers, the site has a fourth: **Tailored Advisory**, a light-touch engagement for companies and founders — a few hours a week, with a custom scope rather than a fixed price. New requests are paused while current capacity is filled throughout EOY (as are Leadership Sessions bookings), so the button is completely disabled with an explanation on the card. The underlying `/partnership` page remains in place with full context and a paused form (Full name · Email · "How can I help you?", all required), ready to reopen when capacity allows.
+Alongside the three bookable offers, the site has a fourth: **Tailored Advisory**, a light-touch engagement for companies and founders — a few hours a week, with a custom scope rather than a fixed price. New requests are paused due to current capacity (as are Leadership Sessions bookings), so the button is completely disabled with an explanation on the card. The underlying `/partnership` page remains in place with full context and a paused form (Full name · Email · "How can I help you?", all required), ready to reopen when capacity allows.
 
 Instead of relying on a Google Form embed, submissions are handled on the site:
 
