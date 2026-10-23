@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792195444309,
+      "tag": "0000_bookings_guest_company_linkedin",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792195462893,
+      "tag": "0001_partnership_requests_company_linkedin",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+ALTER TABLE public.bookings ADD COLUMN guest_company TEXT; ALTER TABLE public.bookings ADD COLUMN guest_linkedin TEXT;

@@ -1,0 +1,1 @@
+ALTER TABLE public.partnership_requests ADD COLUMN company TEXT; ALTER TABLE public.partnership_requests ADD COLUMN linkedin TEXT;
